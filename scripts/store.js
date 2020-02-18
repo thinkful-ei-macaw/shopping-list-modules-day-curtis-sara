@@ -4,8 +4,8 @@ const items = [];
 const hideCheckedItems =  false;
 
 function findById (id) {
-  return items.find(item => items.id === item.id);
-}
+  return items.find(item => item.id === id);
+};
 
 function addItem (name) {
   try {
@@ -18,6 +18,7 @@ function addItem (name) {
 
 function findAndToggleChecked(id){
   let foundItem = findById(id);
+  console.log(foundItem);
   foundItem.checked = !foundItem.checked;
 }
 
