@@ -18,12 +18,11 @@ function addItem (name) {
 
 function findAndToggleChecked(id){
   let foundItem = findById(id);
-  console.log(foundItem);
   foundItem.checked = !foundItem.checked;
 }
 
 function findAndUpdateName(id, newName){
-  try{
+  try {
     validateName(newName);
     this.findById(id).name = newName;
   } catch (error) {
@@ -36,6 +35,11 @@ function findAndDelete(id) {
   items.splice(index, 1);
 } 
 
+function toggleCheckedFilter(){
+  this.hideCheckedItems = !this.hideCheckedItems;
+}
+
+
 export default {
   items,
   hideCheckedItems,
@@ -43,6 +47,7 @@ export default {
   addItem,
   findAndToggleChecked,
   findAndUpdateName,
-  findAndDelete
+  findAndDelete,
+  toggleCheckedFilter
 };
 
